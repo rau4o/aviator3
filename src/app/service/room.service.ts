@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 
 export class RoomService {
-  private readonly baseUrl = 'https://f172-178-91-18-156.ngrok-free.app';
+  private readonly baseUrl = 'http://209.250.233.190:80';
   private http = inject(HttpClient);
 
   public getRoomsList(): Observable<any> {
