@@ -1,13 +1,13 @@
-import {inject, Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject, Observable} from "rxjs";
+import { inject, Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class RoomService {
-  private readonly baseUrl = 'https://api.1pscpy.com';
+  private readonly baseUrl = 'http://194.32.140.143:9900';
   private http = inject(HttpClient);
   private socket: any;
 
@@ -34,7 +34,7 @@ export class RoomService {
   }
 
   connect(): void {
-    this.socket = new WebSocket('wss://api.1pscpy.com/v1/rooms/websocket');
+    this.socket = new WebSocket('ws://194.32.140.143:9900/v1/rooms/websocket');
 
     this.socket.onopen = () => {
       console.log('WebSocket connection established.');
